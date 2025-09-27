@@ -249,11 +249,20 @@ const Suggestion = styled('li')`
   grid-template-columns: 170px auto;
   align-items: center;
   padding: ${space(1)} 0;
-  border-bottom: 1px solid ${p => p.theme.innerBorder};
+  border-top: 1px solid ${p => p.theme.innerBorder};
   gap: ${space(1)};
+
+  &:first-child {
+    border-top: none;
+  }
 
   &:hover {
     cursor: pointer;
+    border-top-color: transparent;
+  }
+
+  &:hover + & {
+    border-top-color: transparent;
   }
 
   &:hover .data-actions-wrapper {
